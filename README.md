@@ -13,6 +13,7 @@ Here I added middleware function to code and I showing how these functions work.
 ## SOURCE 
 While creating the project I used: 
 1. ExpressJS static files [http://expressjs.com/en/starter/static-files.html]
+2. ExpressJS middleware [http://expressjs.com/en/guide/using-middleware.html]
 
 ## TOOLS 
 I used package.json.
