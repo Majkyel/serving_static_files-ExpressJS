@@ -8,8 +8,8 @@ app.get('/', function(req, res) {
     res.sendFile('./assets/index.html');
 });
 
-app.use(function(req, res, next) {
-    console.log('Hi! I am between request and response!');
+app.use('/userform', function(req, res, next) {
+    console.log('Hi! I am intermediary on the "/userform - middleware function"');
     next();
 });
 
@@ -20,6 +20,15 @@ app.get('/userform', function(req, res) {
     };
     
     res.end(JSON.stringify(response));
+});
+
+app.use('/store',function(req, res, next) {
+    console.log('I am intermediary on the requesting "/store" - middleware function');
+    next();
+});
+
+app.get('/store', function(req, res) {
+    res.send('This is shop!');
 });
 
 var server = app.listen(3000, 'localhost', function() {
