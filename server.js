@@ -19,7 +19,7 @@ app.get('/userform', function(req, res) {
         last_name: req.query.last_name
     };
     
-    res.end(JSON.stringify(response));
+    res.send(JSON.stringify(response));
 });
 
 const server = app.listen(3000, 'localhost', function() {
