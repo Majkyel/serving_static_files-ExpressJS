@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 app.use(express.static('assets'));
 
@@ -19,7 +19,7 @@ app.get('/userform', function(req, res) {
         last_name: req.query.last_name
     };
     
-    res.end(JSON.stringify(response));
+    res.send(JSON.stringify(response));
 });
 
 app.use('/store',function(req, res, next) {
@@ -31,9 +31,9 @@ app.get('/store', function(req, res) {
     res.send('This is shop!');
 });
 
-var server = app.listen(3000, 'localhost', function() {
-    var host = server.address().address;
-    var port = server.address().port;
+const server = app.listen(3000, 'localhost', function() {
+    let host = server.address().address;
+    let port = server.address().port;
     
     console.log('Application listen on http://'+host+':'+port);
 });
