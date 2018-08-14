@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 app.use(express.static('assets'));
 
@@ -22,9 +22,9 @@ app.get('/userform', function(req, res) {
     res.end(JSON.stringify(response));
 });
 
-var server = app.listen(3000, 'localhost', function() {
-    var host = server.address().address;
-    var port = server.address().port;
+const server = app.listen(3000, 'localhost', function() {
+    let host = server.address().address;
+    let port = server.address().port;
     
     console.log('Application listen on http://'+host+':'+port);
 });
